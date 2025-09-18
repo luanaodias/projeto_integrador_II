@@ -61,6 +61,18 @@ public class ControllerDeUsuario {
         return ResponseEntity.ok().body(UsuarioMapper.paraDto(dominio));
     }
 
+    @Operation(description = "Retorna usuário filtrado por email", summary = "Filtrar por email")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200", description = "Usuário retornado com sucesso", content = @Content(schema = @Schema(implementation = DadosRetornoUsuario.class))),
+            @ApiResponse(responseCode = "400", description = "Bad Request", content = @Content(schema = @Schema(implementation = ErroCustomizado.class))),
+            @ApiResponse(responseCode = "403", description = "Forbidden", content = @Content),
+            @ApiResponse(responseCode = "404", description = "Not Found", content = @Content(schema = @Schema(implementation = ErroCustomizado.class)))})
+    @GetMapping(produces = "application/json")
+    public ResponseEntity<DadosRetornoUsuario> filtrarUsuarioPorEmail(@RequestParam String email) {
+        Usuario dominio = service.filtrarPorEmail(email);
+        return ResponseEntity.ok().body(UsuarioMapper.paraDto(dominio));
+    }
+
     @Operation(description = "Atualiza os dados do usuário", summary = "Atualizar usuário")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Usuário atualizado com sucesso", content = @Content(schema = @Schema(implementation = DadosRetornoUsuario.class))),

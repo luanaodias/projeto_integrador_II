@@ -1,17 +1,17 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Login from './pages/Login';
+import Login from './pages/Usuario/Login';
 import Dashboard from './pages/Dashboard';
 
 // Usuários
-import Usuarios from './pages/Usuarios';
-import CadastrarUsuario from './pages/CadastrarUsuario';
-import BuscarUsuario from './pages/BuscarUsuario';
+import Usuarios from './pages/Usuario/Usuarios';
+import CadastrarUsuario from './pages/Usuario/CadastrarUsuario';
+import BuscarUsuario from './pages/Usuario/BuscarUsuario';
 
 // Produtos
-import Produtos from './pages/Produtos';
-import CadastrarProduto from './pages/CadastrarProduto';
-import EditarProduto from './pages/EditarProduto';
-import AdicionarDescontoFiltrado from './pages/AdicionarDescontoFiltrado'; // nova tela
+import Produtos from './pages/Produto/Produtos';
+import CadastrarProduto from './pages/Produto/CadastrarProduto';
+import EditarProduto from './pages/Produto/EditarProduto';
+import AdicionarDescontoFiltrado from './pages/Produto/AdicionarDescontoFiltrado'; // nova tela
 
 function App() {
   return (

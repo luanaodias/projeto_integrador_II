@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 
-export default function Dashboard() {
+export default function Usuarios() {
   const navigate = useNavigate();
 
   return (
@@ -22,7 +22,7 @@ export default function Dashboard() {
         width: '100%',
         maxWidth: '500px',
       }}>
-        <h1 style={{ marginBottom: '30px', color: '#333' }}>Dashboard</h1>
+        <h1 style={{ marginBottom: '30px', color: '#333' }}>Gerenciamento de Usuários</h1>
 
         <div style={{
           display: 'flex',
@@ -30,7 +30,7 @@ export default function Dashboard() {
           gap: '20px'
         }}>
           <button 
-            onClick={() => navigate('/usuarios')} 
+            onClick={() => navigate('/usuarios/cadastrar')} 
             style={{
               padding: '15px',
               backgroundColor: '#6a11cb',
@@ -45,11 +45,11 @@ export default function Dashboard() {
             onMouseOver={(e) => e.target.style.backgroundColor = '#4b0f9c'}
             onMouseOut={(e) => e.target.style.backgroundColor = '#6a11cb'}
           >
-            Gerenciar Usuários
+            Cadastrar Usuário
           </button>
 
           <button 
-            onClick={() => navigate('/produtos')} 
+            onClick={() => navigate('/usuarios/buscar')} 
             style={{
               padding: '15px',
               backgroundColor: '#2575fc',
@@ -64,7 +64,27 @@ export default function Dashboard() {
             onMouseOver={(e) => e.target.style.backgroundColor = '#1a5fd4'}
             onMouseOut={(e) => e.target.style.backgroundColor = '#2575fc'}
           >
-            Gerenciar Produtos
+            Buscar Usuários
+          </button>
+
+          {/* Botão de voltar */}
+          <button 
+            onClick={() => navigate('/dashboard')} 
+            style={{
+              padding: '15px',
+              backgroundColor: '#555',
+              color: '#fff',
+              border: 'none',
+              borderRadius: '10px',
+              fontSize: '16px',
+              fontWeight: 'bold',
+              cursor: 'pointer',
+              transition: '0.3s'
+            }}
+            onMouseOver={(e) => e.target.style.backgroundColor = '#333'}
+            onMouseOut={(e) => e.target.style.backgroundColor = '#555'}
+          >
+            Voltar
           </button>
         </div>
       </div>
